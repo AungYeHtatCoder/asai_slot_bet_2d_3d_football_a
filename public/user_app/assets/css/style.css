@@ -1,0 +1,428 @@
+@import url("https://fonts.cdnfonts.com/css/source-sans-pro");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+/* #preloader {
+    background: url(../img/logo.png) no-repeat center center;
+    background-size: 200px;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+} */
+
+.preloader {
+  visibility: hidden;
+  display: none;
+}
+
+.fa-bell {
+  font-size: 20px;
+}
+
+.fa-bars {
+  font-size: 20px;
+}
+
+#top-nav {
+  border-radius: 0 0 25px 25px;
+  background: linear-gradient(6deg, rgba(102, 0, 149, 1) 0%, rgba(52, 0, 87, 1) 56%);
+}
+
+#allBgColor,
+.allBgColor {
+  background: linear-gradient(6deg, rgba(102, 0, 149, 1) 0%, rgba(52, 0, 87, 1) 56%);
+}
+
+/* sidebar */
+#main {
+  position: relative;
+}
+
+.bg-profile {
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+.text-purple {
+  color: #8b00dc;
+}
+
+.ease-left-in .login-btn,
+.ease-left-in .login-btn:hover {
+  text-decoration: none;
+  color: #8b00dc;
+  font-size: 16px;
+  padding: 0;
+}
+
+.ease-left-in .fa-user-circle {
+  font-size: 45px;
+}
+
+.ease-left-in img {
+  width: 45px;
+  border-radius: 50%;
+}
+
+.sidebar {
+  height: 100vh;
+  /* Make the sidebar take up the full height of the viewport */
+  width: 300px;
+  /* Set the width of the sidebar */
+  position: absolute;
+  /* Make the sidebar fixed position */
+  top: 0;
+  /* Position it at the top of the viewport */
+  left: -300px;
+  /* Position it at the left of the viewport */
+  background: linear-gradient(
+    90deg,
+    rgba(220, 158, 255, 1) 0%,
+    rgba(255, 193, 253, 1) 50%,
+    rgba(232, 173, 255, 1) 100%
+  );
+  padding-top: 20px;
+  /* Add some padding at the top */
+  z-index: 10;
+  transition-duration: 0.6s;
+  display: none;
+  transition-delay: 0.6s;
+}
+
+.ease-left-in {
+  display: block;
+  height: 100%;
+  /* Make the sidebar take up the full height of the viewport */
+  width: 300px;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Make the sidebar fixed position */
+  top: 0;
+  /* Position it at the top of the viewport */
+  left: 350px;
+  /* Position it at the left of the viewport */
+  background: linear-gradient(
+    90deg,
+    rgba(220, 158, 255, 1) 0%,
+    rgba(255, 193, 253, 1) 50%,
+    rgba(232, 173, 255, 1) 100%
+  );
+  padding-top: 20px;
+  padding-bottom: 70px;
+  /* Add some padding at the top */
+  z-index: 10;
+  transition-duration: 0.6s;
+  transition-delay: 0.6s;
+  overflow: scroll;
+}
+
+@media only screen and (max-width: 1200px) {
+  .ease-left-in {
+    left: 300px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .ease-left-in {
+    left: 260px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .ease-left-in {
+    left: 200px;
+  }
+}
+
+@media only screen and (max-width: 912px) {
+  .ease-left-in {
+    left: 230px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ease-left-in {
+    left: 0;
+  }
+}
+
+.ease-left-in a {
+  padding: 10px 15px;
+  /* Add padding to the links */
+  text-decoration: none;
+  /* Remove underline from the links */
+  font-size: 25px;
+  /* Set font size */
+  color: #818181;
+  /* Color of the links */
+  display: block;
+  /* Display links as block elements to take full width */
+}
+
+/* Style for the links on hover */
+.nav-links .link {
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 20px 0 20px;
+  margin: 10px 0;
+  color: #8b00dc;
+}
+
+.nav-links .link:hover {
+  text-decoration: none;
+  color: #8b00dc;
+  padding-left: 7px;
+  transition-duration: 0.6s;
+}
+
+.link .fas {
+  font-size: 20px;
+}
+
+/* sidebar */
+#sideLink i,
+#sideLink p {
+  color: #8b00dc;
+}
+
+.footer-border {
+  border-radius: 30px 30px 0 0;
+}
+
+.footer-link {
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+#registerBtn {
+  position: relative;
+}
+
+.fa-user-plus {
+  position: absolute;
+  top: -30px;
+  left: -15px;
+  background: linear-gradient(6deg, rgba(102, 0, 149, 1) 0%, rgba(52, 0, 87, 1) 56%);
+  color: #ffffff;
+  padding: 15px;
+  border: 1px solid #d188fb;
+  box-shadow: 1px 2px 3px #d188fb;
+}
+
+.active {
+  /* background-color: #fff;
+    color: #8b00dc; */
+  text-shadow: 2px 3px 4px #ffffff;
+}
+
+.footer-link:hover {
+  /* background-color: #fff; */
+  /* width: 100px;
+    height: 50px; */
+  /* border-radius: 10%; */
+  /* border: 1px solid #fff; */
+  color: #8b00dc;
+  /* box-shadow: 2px 3px 4px #000; */
+  transform: scale(1.2);
+  transition-duration: 0.6s;
+}
+
+.footer-link i {
+  font-size: 20px;
+}
+
+/* .main-background{
+    background: linear-gradient(90deg, rgba(237,205,255,1) 0%, rgba(255,255,255,1) 50%, rgba(238,195,255,1) 100%);
+} */
+
+.nav-border-purple {
+  border-right: 1px solid #a202ff;
+  border-left: 1px solid #a202ff;
+  border-bottom: 1px solid #a202ff;
+  box-shadow: 1px 2px 3px #b93fff;
+}
+
+.border-purple {
+  border: 1px solid #d188fb;
+  box-shadow: 1px 2px 3px #b93fff;
+}
+
+.footer-border-purple {
+  border-right: 1px solid #a202ff;
+  border-left: 1px solid #a202ff;
+  border-top: 1px solid #a202ff;
+  box-shadow: 1px 2px 3px #b93fff;
+  background: linear-gradient(6deg, rgba(102, 0, 149, 1) 0%, rgba(52, 0, 87, 1) 56%);
+}
+
+.btn-purple {
+  border: 1px solid #ff00fb;
+  box-shadow: 1px 2px 3px #b93fff;
+}
+
+.bg-purple {
+  background: linear-gradient(
+    90deg,
+    rgba(166, 0, 255, 1) 0%,
+    rgba(110, 3, 162, 1) 50%,
+    rgba(157, 2, 218, 1) 100%
+  );
+}
+
+marquee {
+  background-color: #000;
+  border: 1px solid #d188fb;
+  color: #fff;
+  margin-top: 10px;
+  line-height: 40px;
+}
+
+.d-frame-box {
+  position: relative;
+}
+
+.d-frame-box:hover {
+  box-shadow: 2px 3px 4px rgb(208, 0, 255);
+}
+
+.frameBox {
+  position: absolute;
+  top: 5px;
+  left: 65px;
+  width: 50px;
+}
+
+/* 2d 3d */
+.digit-card {
+  width: 100%;
+  background-color: #8f00e1 !important;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 1px 2px 3px #000;
+}
+
+hr {
+  color: white !important;
+}
+
+.multi-text {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+.playTime a:hover {
+  border: 1px solid purple;
+  color: #000;
+}
+
+footer {
+  position: relative;
+}
+
+.bankCheck {
+  border-bottom: 3px solid #fff;
+  /* transition-duration: .6s; */
+}
+
+.bankCheck:hover {
+  border-bottom: 3px solid #fff;
+  /* transition-duration: .6s; */
+}
+
+/* 2D number card start */
+.number_card {
+  background: linear-gradient(6deg, rgba(102, 0, 149, 1) 0%, rgba(52, 0, 87, 1) 56%);
+  box-shadow: 2px 3px 4px rgb(208, 0, 255);
+  cursor: pointer;
+}
+
+/* 2D number card end */
+
+/* wallet amount card start  */
+.wallet_amount_card {
+  border-radius: 20px;
+  height: 20vh;
+  border-right: 1px solid #a202ff;
+  border-left: 1px solid #a202ff;
+  border-top: 1px solid #a202ff;
+  box-shadow: 1px 2px 3px #b93fff;
+}
+
+.balance_action_box {
+  border-radius: 20px;
+  height: auto;
+  border-right: 1px solid #a202ff;
+  border-left: 1px solid #a202ff;
+}
+
+@media only screen and(max-width: 744px) {
+  .wallet_amount_card {
+    height: 9vh;
+  }
+}
+
+/* wallet amount card end  */
+
+.threed_list {
+  border: 1px solid #a202ff;
+}
+
+.card_color {
+  background: linear-gradient(6deg, rgba(102, 0, 149, 1) 0%, rgba(52, 0, 87, 1) 56%);
+}
+
+/* twoD_threeD_card */
+.twoD_threeD_card {
+  background: linear-gradient(
+    90deg,
+    rgba(166, 0, 255, 1) 0%,
+    rgba(110, 3, 162, 1) 50%,
+    rgba(157, 2, 218, 1) 100%
+  );
+}
+
+/* twoD_threeD_card */
+
+/* dreambook */
+.dream-header {
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(6deg, rgba(102, 0, 149, 1) 0%, rgba(52, 0, 87, 1) 56%);
+  height: 40px;
+  padding: 10px 0;
+  margin: 0;
+  border: 1px solid #a202ff;
+}
+
+.dream-img {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.dream-img img {
+  width: inherit;
+  /* height: auto; */
+}
+
+.dream-btn {
+  background: linear-gradient(6deg, rgba(102, 0, 149, 1) 0%, rgba(52, 0, 87, 1) 56%);
+  border: none;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #a202ff;
+}
+
+.dream-btn.selected {
+  background-color: #a202ff;
+  color: #fff;
+}

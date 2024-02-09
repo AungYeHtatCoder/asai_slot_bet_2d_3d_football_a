@@ -1,0 +1,341 @@
+body {
+    box-sizing: border-box;
+    /* background: rgb(0, 51, 72); */
+    background: linear-gradient(
+        275deg,
+        rgba(0, 51, 72, 1) 27%,
+        rgba(4, 54, 74, 1) 52%
+    );
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        width: 100%;
+    }
+
+    .navs {
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+.main {
+    width: 380px;
+    min-height: 100vh;
+    /* background: linear-gradient(#37424c 0, #1c252d 100%); */
+    /* background: rgb(0, 51, 72); */
+    background: linear-gradient(
+        275deg,
+        rgba(0, 51, 72, 1) 27%,
+        rgba(4, 54, 74, 1) 52%
+    );
+    color: #fff;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    margin: auto;
+
+    /* padding-bottom: 100px; */
+    padding-top: 10px;
+}
+
+.navs {
+    width: inherit;
+    height: 60px;
+    /* background: linear-gradient(90deg, #273038, #182028); */
+    /* background-color: #003348; */
+    background-color: #002635;
+    border-bottom: 0.5px solid #f7d800;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* .nav-img img {
+  width: 60px;
+  height: 60px;
+} */
+
+.nav-login img {
+    width: 40px;
+    height: 40px;
+}
+
+.btn-login {
+    /* background-color: #6607a5; */
+    background: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0.02rem 0.1rem rgba(0, 0, 0, 0.2),
+        0 0.04rem 0.04rem rgba(0, 0, 0, 0.14);
+    font-size: 14px;
+    font-weight: 700;
+    border: 2px solid #f7d800;
+}
+
+.btn-register {
+    background-color: #002635;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0 0 0 #2ec59c;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+footer {
+    width: inherit;
+    height: 70px;
+    /* background: #38444d; */
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.46);
+    /* background: linear-gradient(6deg, rgba(102, 0, 149, 1) 0%, #340057 56%); */
+    background-color: #002635;
+}
+
+footer a {
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+}
+
+footer .footer-item {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    /* border: 5px solid #f7ba00; */
+    border: 5px solid #f7d800;
+    margin-top: -20px;
+    border-radius: 50%;
+    /* background: linear-gradient(360deg, #1a2b32, #8e09e7); */
+    background-color: #002635;
+    /* background-color: #7908c4; */
+    text-align: center;
+    color: #fff;
+}
+
+.marquee-text {
+    white-space: nowrap;
+    color: #fff;
+    font-weight: bold;
+    animation: marquee-scroll 10s linear infinite;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.carousel {
+    height: 200px;
+}
+.carousel img {
+    height: 200px;
+    border-radius: 10px;
+}
+
+.footerinfo {
+    /* background-color: #182028; */
+    /* background-color: #340057; */
+    background-color: #002635;
+    padding: 10px;
+}
+
+.footer-logo img {
+    width: 50px;
+    margin-top: 10px;
+}
+
+.footer-text {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0.4rem;
+    text-align: center;
+}
+
+.footer-img img {
+    width: 30px;
+    height: 30px;
+}
+
+.game-content a span {
+    font-size: 14px;
+    white-space: nowrap;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.game-content-title span {
+    color: #fff;
+    font-size: 18px;
+}
+.offcanvas {
+    max-width: 80% !important;
+    background: linear-gradient(
+        275deg,
+        rgba(0, 51, 72, 1) 27%,
+        rgba(4, 54, 74, 1) 52%
+    ) !important;
+}
+
+.modal-content {
+    background: linear-gradient(
+        275deg,
+        rgba(0, 51, 72, 1) 27%,
+        rgba(4, 54, 74, 1) 52%
+    ) !important;
+}
+
+.nav .nav-item {
+    margin-top: 20px;
+}
+
+.nav .nav-item a {
+    color: #fff;
+}
+
+.nav .nav-item img {
+    width: 30px;
+    height: 30px;
+}
+
+/* .promotion .promotion-content {
+  box-shadow: 0px 24px 8px -19px rgba(0, 0, 0, 0.1) !important;
+} */
+
+.promotion .card-body {
+    background-color: #002635;
+    color: #fff;
+}
+
+.card-btn {
+    background: transparent;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #f7d800;
+}
+
+.topup input,
+.withdraw input {
+    background-color: transparent;
+    border: 2px solid #f7d800;
+}
+
+.bank {
+    background-color: #002635;
+    border-radius: 10px;
+}
+
+.bank p {
+    color: #fff;
+    font-size: 14px;
+}
+.bank img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+.wallet {
+    background-color: #6c757d;
+    cursor: pointer;
+}
+.active {
+    /* background-color: #f7d800; */
+    border: 1px solid#f7d800;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tabactive {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dropdowns {
+    background: linear-gradient(
+        275deg,
+        rgba(0, 51, 72, 1) 27%,
+        rgba(4, 54, 74, 1) 52%
+    );
+}
+
+.dropdowns li {
+    margin-top: 10px;
+}
+
+.dropdowns li a {
+    color: #fff;
+}
+
+.wallet-top {
+    padding: 10px;
+    height: 350px;
+    position: relative;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.wallet-top::before {
+    content: "";
+    background-color: #002635;
+    border-radius: 10px;
+    border-bottom: 1px solid #f7d800;
+
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin: 0 10px;
+}
+
+.wallet-top-content {
+    height: 130px;
+    margin: 8px 20px;
+    background: linear-gradient(
+        275deg,
+        rgba(0, 51, 72, 1) 27%,
+        rgba(4, 54, 74, 1) 52%
+    );
+    box-shadow: 0 0 0.08rem 0 rgba(0, 0, 0, 0.16);
+    border-bottom: 1px solid #f7d800;
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.user-information .card {
+    background-color: #002635;
+    color: #fff;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #002635;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #f7d800;
+}
+
+.bet-total {
+    background-color: #002635;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.game-content img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    border: 2px solid #f7d800;
+}

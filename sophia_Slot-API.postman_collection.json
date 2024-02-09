@@ -1,0 +1,432 @@
+{
+    "info": {
+        "_postman_id": "a83c4514-1d13-4dda-9416-60276ba81778",
+        "name": "Slot-API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "11735398"
+    },
+    "item": [
+        {
+            "name": "Create Player",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{server}}/createMember.aspx?operatorcode=r8bm&username=sophia&signature=3AF1AEDEE9409AA1E7FBDEEC36CEA86A",
+                    "host": ["{{server}}"],
+                    "path": ["createMember.aspx"],
+                    "query": [
+                        {
+                            "key": "operatorcode",
+                            "value": "r8bm"
+                        },
+                        {
+                            "key": "username",
+                            "value": "sophia"
+                        },
+                        {
+                            "key": "signature",
+                            "value": "3AF1AEDEE9409AA1E7FBDEEC36CEA86A"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Agent Balance",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{server}}/checkAgentCredit.aspx?operatorcode=r8bm&signature=B5E3D88F1FBEBC285E7F74BD3A18FB18",
+                    "host": ["{{server}}"],
+                    "path": ["checkAgentCredit.aspx"],
+                    "query": [
+                        {
+                            "key": "operatorcode",
+                            "value": "r8bm"
+                        },
+                        {
+                            "key": "signature",
+                            "value": "B5E3D88F1FBEBC285E7F74BD3A18FB18"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Player Balance",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{server}}/getBalance.aspx?operatorcode=r8bm&username=delightamk&signature=631838980F1078BED27330F37A285CD2&password=pass1234&providercode=PG",
+                    "host": ["{{server}}"],
+                    "path": ["getBalance.aspx"],
+                    "query": [
+                        {
+                            "key": "operatorcode",
+                            "value": "r8bm"
+                        },
+                        {
+                            "key": "username",
+                            "value": "delightamk"
+                        },
+                        {
+                            "key": "signature",
+                            "value": "631838980F1078BED27330F37A285CD2"
+                        },
+                        {
+                            "key": "password",
+                            "value": "pass1234"
+                        },
+                        {
+                            "key": "providercode",
+                            "value": "PG"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Make Transfer",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{server}}/makeTransfer.aspx?operatorcode=r8bm&username=delightamk&signature=95C991226C0262FB31C757307B184505&password=pass1234&providercode=AG&referenceid=test878&type=0&amount=1000.0",
+                    "host": ["{{server}}"],
+                    "path": ["makeTransfer.aspx"],
+                    "query": [
+                        {
+                            "key": "operatorcode",
+                            "value": "r8bm"
+                        },
+                        {
+                            "key": "username",
+                            "value": "delightamk"
+                        },
+                        {
+                            "key": "signature",
+                            "value": "95C991226C0262FB31C757307B184505"
+                        },
+                        {
+                            "key": "password",
+                            "value": "pass1234"
+                        },
+                        {
+                            "key": "providercode",
+                            "value": "AG"
+                        },
+                        {
+                            "key": "referenceid",
+                            "value": "test878"
+                        },
+                        {
+                            "key": "type",
+                            "value": "0"
+                        },
+                        {
+                            "key": "amount",
+                            "value": "1000.0"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Check Product Username",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{server}}/checkMemberProductUsername.aspx?operatorcode=r8bm&username=sophia&signature=B4372ECD84FE0BF66B0191708D02B3DB&providercode=GB",
+                    "host": ["{{server}}"],
+                    "path": ["checkMemberProductUsername.aspx"],
+                    "query": [
+                        {
+                            "key": "operatorcode",
+                            "value": "r8bm"
+                        },
+                        {
+                            "key": "username",
+                            "value": "sophia"
+                        },
+                        {
+                            "key": "signature",
+                            "value": "B4372ECD84FE0BF66B0191708D02B3DB"
+                        },
+                        {
+                            "key": "providercode",
+                            "value": "GB"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Game List",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{server}}/getGameList.aspx?operatorcode=r8bm&Lang=en&providercode=G8&reformatJson=yes&html5=1&signature=222E85286D2B4FC1ED67DD476D3196EF",
+                    "host": ["{{server}}"],
+                    "path": ["getGameList.aspx"],
+                    "query": [
+                        {
+                            "key": "operatorcode",
+                            "value": "r8bm"
+                        },
+                        {
+                            "key": "Lang",
+                            "value": "en"
+                        },
+                        {
+                            "key": "providercode",
+                            "value": "G8"
+                        },
+                        {
+                            "key": "reformatJson",
+                            "value": "yes"
+                        },
+                        {
+                            "key": "html5",
+                            "value": "1"
+                        },
+                        {
+                            "key": "signature",
+                            "value": "222E85286D2B4FC1ED67DD476D3196EF"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Launch Game",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{server}}/launchGames.ashx?operatorcode=r8bm&providercode=AG&username=sophia&password=pass1234&type=SL&gameid=0&lang=en&html5=1&signature=658BA62130E9D8C7F78CF9F05D322F38",
+                    "host": ["{{server}}"],
+                    "path": ["launchGames.ashx"],
+                    "query": [
+                        {
+                            "key": "operatorcode",
+                            "value": "r8bm"
+                        },
+                        {
+                            "key": "providercode",
+                            "value": "AG"
+                        },
+                        {
+                            "key": "username",
+                            "value": "sophia"
+                        },
+                        {
+                            "key": "password",
+                            "value": "pass1234"
+                        },
+                        {
+                            "key": "type",
+                            "value": "SL"
+                        },
+                        {
+                            "key": "gameid",
+                            "value": "0"
+                        },
+                        {
+                            "key": "lang",
+                            "value": "en"
+                        },
+                        {
+                            "key": "html5",
+                            "value": "1"
+                        },
+                        {
+                            "key": "signature",
+                            "value": "658BA62130E9D8C7F78CF9F05D322F38"
+                        },
+                        {
+                            "key": "FH",
+                            "value": null,
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Betting History",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Cookie",
+                        "value": "ASP.NET_SessionId=tplnxl22lxohcq2lfx5hperh"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "url": {
+                    "raw": "http://gslog.336699bet.com/fetchbykey.aspx?operatorcode=r8bm&versionkey=1&signature=B5E3D88F1FBEBC285E7F74BD3A18FB18",
+                    "protocol": "http",
+                    "host": ["gslog", "336699bet", "com"],
+                    "path": ["fetchbykey.aspx"],
+                    "query": [
+                        {
+                            "key": "operatorcode",
+                            "value": "r8bm"
+                        },
+                        {
+                            "key": "versionkey",
+                            "value": "1"
+                        },
+                        {
+                            "key": "signature",
+                            "value": "B5E3D88F1FBEBC285E7F74BD3A18FB18"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Betting History Archived",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Cookie",
+                        "value": "ASP.NET_SessionId=tplnxl22lxohcq2lfx5hperh"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "url": {
+                    "raw": "http://gslog.336699bet.com/fetchArchieve.aspx?operatorcode=r8bm&versionkey=1&signature=B5E3D88F1FBEBC285E7F74BD3A18FB18",
+                    "protocol": "http",
+                    "host": ["gslog", "336699bet", "com"],
+                    "path": ["fetchArchieve.aspx"],
+                    "query": [
+                        {
+                            "key": "operatorcode",
+                            "value": "r8bm"
+                        },
+                        {
+                            "key": "versionkey",
+                            "value": "1"
+                        },
+                        {
+                            "key": "signature",
+                            "value": "B5E3D88F1FBEBC285E7F74BD3A18FB18"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Mark Betting History",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Cookie",
+                        "value": "ASP.NET_SessionId=tplnxl22lxohcq2lfx5hperh"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"operatorcode\":\"r8bm\",\n    \"signature\":\"B5E3D88F1FBEBC285E7F74BD3A18FB18\",\n    \"ticket\": \"31494195285\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://gslog.336699bet.com/markbyjson.aspx",
+                    "protocol": "http",
+                    "host": ["gslog", "336699bet", "com"],
+                    "path": ["markbyjson.aspx"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Mark Betting History Archived",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Cookie",
+                        "value": "ASP.NET_SessionId=tplnxl22lxohcq2lfx5hperh"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"operatorcode\":\"r8bm\",\n    \"signature\":\"B5E3D88F1FBEBC285E7F74BD3A18FB18\",\n    \"ticket\": \"31494195285\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://gslog.336699bet.com/markArchieve.ashx",
+                    "protocol": "http",
+                    "host": ["gslog", "336699bet", "com"],
+                    "path": ["markArchieve.ashx"]
+                }
+            },
+            "response": []
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "server",
+            "value": "https://gsmd.336699bet.com",
+            "type": "string"
+        },
+        {
+            "key": "secret_key",
+            "value": "cb9d7680c24e1d501a9a393b0698e522",
+            "type": "string"
+        }
+    ]
+}
