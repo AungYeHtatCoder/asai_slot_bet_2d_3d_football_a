@@ -3,6 +3,7 @@
 @section('content')
 @include('user_layouts.navbar')
 <!-- content -->
+{{-- welcome --}}
 <div class="container-fluid py-5 mt-5">
     <!-- carousel -->
     <div id="carouselExampleControls" class="carousel slide border-purple" data-bs-ride="carousel">
