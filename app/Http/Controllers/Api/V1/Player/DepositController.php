@@ -50,9 +50,6 @@ class DepositController extends Controller
             if ($inputs['cash_in'] > $user->balance) {
                 return $this->error('', 'Insuffience Balance', 401);
             }
-
-                $this->updatePlayerBalance($inputs, $user);
-                $this->updateUserWallet($inputs);
                 PlayerTransactionLogs::create($inputs);
 
                 return $this->success('Deposit success');

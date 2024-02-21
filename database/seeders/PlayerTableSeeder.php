@@ -26,7 +26,7 @@ class PlayerTableSeeder extends Seeder
         $data = User::create($users);
         $data->userWallet()->create(
             [
-                'wallet' => 0.00,
+                'wallet' => 10000.00,
                 'ag_wallet' => 0.00,
                 'gb_wallet' => 0.00,
                 'g8_wallet' => 0.00,

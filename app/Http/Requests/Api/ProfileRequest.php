@@ -4,7 +4,7 @@ namespace App\Http\Requests\Api;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ExchangeMainRequest extends FormRequest
+class ProfileRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,10 +21,9 @@ class ExchangeMainRequest extends FormRequest
      */
     public function rules(): array
     {
-
         return [
-            'p_code' => ['required', 'exists:providers,p_code'],
-            'cash_out' => ['required','integer']
+            'profile' => ['nullable','image'],
+            'phone' => ['required'],
         ];
     }
 }

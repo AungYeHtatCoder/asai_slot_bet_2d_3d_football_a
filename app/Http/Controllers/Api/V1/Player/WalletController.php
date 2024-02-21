@@ -6,6 +6,7 @@ use App\Helpers\WalletHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\CommonRequest;
 use App\Http\Requests\Api\ExchangeMainRequest;
+use App\Models\Admin\PlayerTransactionLogs;
 use App\Models\User;
 use App\Models\UserWallet;
 use App\Traits\HttpResponses;
@@ -23,25 +24,31 @@ class WalletController extends Controller
         $wallets = UserWallet::where('user_id', Auth::id())->first();
         return $this->success($wallets);
     }
-    
+
     public function exchangeToMain(ExchangeMainRequest $request)
     {
         try {
             $inputs = $request->validated();
             $player =  Auth::user();
             $walletProperties = $this->walletProperties($inputs['p_code']);
-            if($player->userWallet->{$walletProperties} < $inputs['amount'])
-            {
+            $inputs['refrence_id'] = $this->getRefrenceId();
+            $inputs['user_id'] =  $player->id;
+            if ($player->userWallet->{$walletProperties} < $inputs['cash_out']) {
                 throw new Exception('Insufficienc Balance');
             }
-            $this->updateUserBalance($inputs,$player);
-            $this->updateUserWallet($inputs,$player);
-            
 
-        }catch (Exception $exception) {
-            return $this->error('',$exception->getMessage(),401);
+            $result =  PlayerTransactionLogs::create($inputs);
+
+            return $this->success($result);
+        } catch (Exception $exception) {
+            return $this->error('', $exception->getMessage(), 401);
         }
     }
+    private function getRefrenceId($prefix = 'REF')
+    {
+        return  uniqid($prefix);
+    }
+
     private function walletProperties($p_code)
     {
         $walletProperties =   [
@@ -60,18 +67,16 @@ class WalletController extends Controller
 
         return $walletProperties[$p_code] ?? null;
     }
-    private function updateUserBalance($inputs,$player): void
+    private function updateUserBalance($inputs, $player): void
     {
-        $player->balance +=$inputs['amount'];
+        $player->balance += $inputs['amount'];
         $player->save();
-
     }
-    private function updateUserWallet($inputs,$player): void
+    private function updateUserWallet($inputs, $player): void
     {
         $this->walletProperties($inputs['p_code']);
-        $playerWallet = UserWallet::where('user_id',$player->id)->first();
+        $playerWallet = UserWallet::where('user_id', $player->id)->first();
         $playerWallet->{$this->walletProperties($inputs['p_code'])} -= $inputs['amount'];
         $playerWallet->update();
     }
-
 }

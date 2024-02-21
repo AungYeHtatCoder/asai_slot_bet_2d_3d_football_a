@@ -81,28 +81,44 @@
         <div class="card-body">
           <form role="form" method="POST" class="text-start" action="{{ route('admin.player.store') }}">
             @csrf
-            
             <div class="custom-form-group">
-              <label for="title">Phone No</label>
-              <input type="integer" id="phone" name="phone" class="form-control" value="{{old('phone')}}">
+              <label for="title">PlayerName <span class="text-danger">*</span></label>
+              <input type="text"  name="name" class="form-control" value="{{$player_name}}" readonly>
+              @error('name')
+              <span class="text-danger d-block">*{{ $message }}</span>
+              @enderror
+            </div>
+            <div class="custom-form-group">
+              <label for="title">Name <span class="text-danger">*</span></label>
+              <input type="text"  name="player_name" class="form-control" value="{{old('player_name')}}">
+              @error('player_name')
+              <span class="text-danger d-block">*{{ $message }}</span>
+              @enderror
+            </div>
+            <div class="custom-form-group">
+              <label for="title">Phone No <span class="text-danger">*</span></label>
+              <input type="text"  name="phone" class="form-control" value="{{old('phone')}}">
               @error('phone')
-              <span class="d-block text-danger">*{{ $message }}</span>
+              <span class="text-danger d-block">*{{ $message }}</span>
               @enderror
             </div>
             <div class="custom-form-group">
-              <label for="title">Password</label>
-              <input type="password" id="password" name="password" class="form-control">
+              <label for="title">Password <span class="text-danger">*</span></label>
+              <input type="text"  name="password" class="form-control" value="{{old('password')}}">
               @error('password')
-              <span class="d-block text-danger">*{{ $message }}</span>
+              <span class="text-danger d-block">*{{ $message }}</span>
               @enderror
             </div>
-            <div class="custom-form-group">
-              <label for="title">Confirm Password</label>
-              <input type="password" id="confirm-password" name="password_confirmation" class="form-control">
-              @error('password_confirmation')
-              <span class="d-block text-danger">*{{ $message }}</span>
+            <!-- <div class="custom-form-group">
+              <label for="title">Status <span class="text-danger">*</span></label>
+              <select name="status" id="" class="form-control">
+                <option value="1">Active</option>
+                <option value="2">Inactive</option>
+                </select>
+                @error('status')
+              <span class="text-danger d-block">*{{ $message }}</span>
               @enderror
-            </div>
+              </div> -->
 
             <div class="custom-form-group">
               <button type="submit" class="btn btn-primary" type="button">Create</button>
@@ -126,4 +142,65 @@
 
 <script src="{{ asset('admin_app/assets/js/plugins/choices.min.js') }}"></script>
 <script src="{{ asset('admin_app/assets/js/plugins/quill.min.js') }}"></script>
+
+<script>
+  var errorMessage = @json(session('error'));
+  var successMessage = @json(session('success'));
+  var url = @json(session('url'));
+  var name = @json(session('username'));
+  var pw = @json(session('password'));
+
+  @if(session() -> has('success'))
+  Swal.fire({
+    title: successMessage,
+    icon: "success",
+    showConfirmButton: false,
+    showCloseButton: true,
+    html: `
+  <table class="table table-bordered" style="background:#eee;">
+  <tbody>
+  <tr>
+    <td>username</td>
+    <td id="tusername"> ${name}</td>
+  </tr>
+  <tr>
+    <td>pw</td>
+    <td id="tpassword"> ${pw}</td>
+  </tr>
+  <tr>
+    <td>url</td>
+    <td id=""> ${url}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><a href="#" onclick="copy()" class="btn btn-sm btn-primary">copy</a></td>
+  </tr>
+ </tbody>
+  </table>
+  `
+  });
+  @elseif(session()->has('error'))
+  Swal.fire({
+    icon: 'error',
+    title: errorMessage,
+    showConfirmButton: false,
+    timer: 1500
+  })
+  @endif
+  function copy() {
+       var username= $('#tusername').text();
+        var password= $('#tpassword').text();
+        var copy = "url : "+url+"\nusername : "+username+"\npw : "+password;
+        copyToClipboard(copy)
+  }
+  function copyToClipboard(v) {
+            var $temp = $("<textarea>");
+            $("body").append($temp);
+            var html = v;
+            $temp.val(html).select();
+            document.execCommand("copy");
+            $temp.remove();
+        }
+
+  </script>
 @endsection

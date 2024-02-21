@@ -11,7 +11,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class WithdrawController extends Controller
+class WithDrawController extends Controller
 {
 
     use HttpResponses;

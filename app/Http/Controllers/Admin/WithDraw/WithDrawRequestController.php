@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\WithDraw;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\PlayerTransactionLogs;
 use App\Models\Admin\TransferLog;
 use App\Models\User;
 use App\Models\WithDrawRequest;
@@ -57,7 +58,8 @@ class WithDrawRequestController extends Controller
                 'from_user_id' => $agent->id,
                 'to_user_id' => $player->id,
                 'refrence_id' => $this->getRefrenceId(),
-                'cash_out' => $request->amount
+                'cash_out' => $request->amount,
+                'type' => 1
             ]);
             return back()->with('success', 'Admin status switch successfully!');
         } catch (Exception $e) {

@@ -58,21 +58,31 @@
               </td>
               <td>{{ $user->phone }}</td>
               <td>
-                <small class="badge badge-{{ $user->status == 0 ? 'success' : 'danger' }}">{{ $user->status == 0 ? "active" : "ban" }}</small>
+              <small class="badge bg-gradient-{{ $user->status == 1 ? 'success' : ($user->status == 2 ? 'danger' : 'warning') }}">{{ $user->status == 1 ? "active" : ($user->status == 2 ? "inactive" : "pending") }}</small>
+                  {{ $user->status === 0 ? "pending" : ($user->status === 1 ? "active" : "ban") }}
+                </small>
               </td>
               <td>{{ number_format($user->balance,2) }} MMK</td>
 
               <td>{{ Carbon\Carbon::parse($user->created_at)->format('d/m/Y') }}</td>
               <td>
-                @if ($user->status == 0)
+                @if ($user->status == 2)
                 <a onclick="event.preventDefault(); document.getElementById('banUser-{{ $user->id }}').submit();" class="me-2" href="#" data-bs-toggle="tooltip" data-bs-original-title="Ban User">
                   <i class="fas fa-user-slash text-danger" style="font-size: 20px;"></i>
                 </a>
-                @else
+                @elseif($user->status == 1)
                 <a onclick="event.preventDefault(); document.getElementById('banUser-{{ $user->id }}').submit();" class="me-2" href="#" data-bs-toggle="tooltip" data-bs-original-title="Active User">
                   <i class="fas fa-user-check text-success" style="font-size: 20px;"></i>
                 </a>
+                @else
+                <a href="" class="me-2" href="#" data-bs-toggle="tooltip" data-bs-original-title="Active User">
+                  <i class="fas fa-user-check text-warning" style="font-size: 20px;"></i>
+                </a>
                 @endif
+                <form class="d-none" id="banUser-{{ $user->id }}" action="{{ route('admin.agent.ban', $user->id) }}" method="post">
+                  @csrf
+                  @method('PUT')
+                </form>
 
 
                 <a class="me-1" href="{{ route('admin.agent.edit', $user->id) }}" data-bs-toggle="tooltip" data-bs-original-title="Edit User">

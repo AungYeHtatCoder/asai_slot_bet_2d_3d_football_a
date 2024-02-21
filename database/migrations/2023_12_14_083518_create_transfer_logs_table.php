@@ -26,6 +26,7 @@ return new class extends Migration
             $table->timestamps();
             $table->smallInteger('sync')->default(0);
             $table->integer('sync_time')->default(0);
+            $table->integer('type');
             // Add foreign key constraints if needed
             $table->foreign('from_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('to_user_id')->references('id')->on('users')->onDelete('cascade');

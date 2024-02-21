@@ -44,11 +44,11 @@ class GameTypeProviderSeeder extends Seeder
 
         //JDB
         $provider5 = Provider::find(5);
-        $provider5->gameTypes()->attach(4 ,['image' => 'JDB.png']);
+        $provider5->gameTypes()->attach(4 ,['image' => 'JDB.jpeg']);
 
         //NEW LIVE22
         $provider6 = Provider::find(6);
-        $provider6->gameTypes()->attach(4 ,['image' => 'new_live_22.jpeg']);
+        $provider6->gameTypes()->attach(4 ,['image' => 'live22.webp']);
 
 
         //KING855

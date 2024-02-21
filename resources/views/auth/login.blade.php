@@ -2,17 +2,20 @@
 @yield('style')
 
 <body>
+<div class="container-fluid py-5 mt-5">
+
   <div class="main">
     <div class="">
       <div class="text-center mt-3">
-        <img src="{{ asset('/admin_app/logo.png') }}" alt="" style="width: 120px; height: 100px" />
+        <img src="{{ asset('/admin_app/assets/logo.png') }}" alt="" style="width: 120px; height: 100px" />
       </div>
       <h5 class="text-center mt-3">အကောင့်ဝင်ရန်</h5>
+      
       <form action="{{ route('login') }}" method="post" class="p-5">
         @csrf
         <div class="mb-3">
           <label for="login" class="form-label">Email or Phone</label>
-          <input type="text" name="phone" id="login" class="form-control" placeholder="Enter your email or phone">
+          <input type="text" name="phone" id="login" class="form-control" placeholder="ဖုန်းနံပါတ် (သို့) အီးမေးလ်ဖြည့်ပါ">
           @error('phone')
           <div class="alert alert-danger">{{ "The phone field is required." }}</div>
           @enderror
@@ -38,6 +41,7 @@
     </form>
   </div>
   </div>
+</div>
 
 
 

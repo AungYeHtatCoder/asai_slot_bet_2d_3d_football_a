@@ -5,7 +5,7 @@
   <div class="main">
     <div class="">
       <div class="text-center">
-        <img src="https://delightmyanmar.pro/user_app/assets/img/logo.png" alt="" style="width: 100px; height: 100px" />
+        <img src="/assets/logo/logo_icon.png" alt="" style="width: 100px; height: 100px" />
       </div>
       <h5 class="text-center">အကောင့်ဝင်ရန်</h5>
       <form action="{{route('user.login')}}" method="post">

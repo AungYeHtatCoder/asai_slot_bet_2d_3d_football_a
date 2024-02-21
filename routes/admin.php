@@ -73,6 +73,8 @@ Route::group([
         ->name('agent.makeCashOut');
     Route::get('agent/transer-detail/{id}', [AgentController::class, 'getTransferDetail'])
         ->name('agent.getTransferDetail');
+        Route::put('agent/{id}/ban', [AgentController::class, 'banAgent'])->name('agent.ban');
+
     Route::get('withdraw',[WithDrawRequestController::class,'index'])->name('agent.withdraw');
     Route::get('withdraw/{id}',[WithDrawRequestController::class,'show'])->name('agent.withdrawshow');
 
@@ -83,5 +85,5 @@ Route::group([
     Route::get('winlose-provider-List',[ReportController::class,'providerList'])->name('report.providerList');
     Route::get('search/winlost-provider',[ReportController::class,'searchProviderList'])->name('report.searchProvider');
     Route::get('winlose-detail',[ReportController::class,'detail'])->name('report.detail');
-    // 2 d 3 d route here 
+
 });

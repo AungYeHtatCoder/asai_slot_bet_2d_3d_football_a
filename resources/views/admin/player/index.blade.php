@@ -26,8 +26,7 @@
           </div>
           <div class="ms-auto my-auto mt-lg-0 mt-4">
             <div class="ms-auto my-auto">
-              <a href="{{ route('admin.player.create') }}" class="btn bg-gradient-primary btn-sm mb-0">+&nbsp; Create New
-                Player</a>
+              <a href="{{ route('admin.player.create') }}" class="btn bg-gradient-primary btn-sm mb-0">+&nbsp; Create Player</a>
               <button class="btn btn-outline-primary btn-sm export mb-0 mt-sm-0 mt-1" data-type="csv" type="button" name="button">Export</button>
             </div>
           </div>
@@ -58,13 +57,13 @@
               </td>
               <td>{{ $user->phone }}</td>
               <td>
-                <small class="badge badge-{{ $user->status == 0 ? 'success' : 'danger' }}">{{ $user->status == 0 ? "active" : "ban" }}</small>
+              <small class="badge bg-gradient-{{ $user->status == 1 ? 'success' : ($user->status == 2 ? 'danger' : 'warning') }}">{{ $user->status == 1 ? "active" : ($user->status == 2 ? "inactive" : "pending") }}</small>
               </td>
               <td>{{number_format($user->balance,2) }} MMK</td>
               <td>{{ Carbon\Carbon::parse($user->created_at)->format('d/m/Y') }}</td>
               <td>
-                @if ($user->status == 0)
-                <a onclick="event.preventDefault(); document.getElementById('banUser-{{ $user->id }}').submit();" class="me-2" href="#" data-bs-toggle="tooltip" data-bs-original-title="Ban User">
+                @if ($user->status == 2)
+                <a onclick="event.preventDefault(); document.getElementById('banUser-{{ $user->id }}').submit();" class="me-2" href="#" data-bs-toggle="tooltip" data-bs-original-title="Inactive User">
                   <i class="fas fa-user-slash text-danger" style="font-size: 20px;"></i>
                 </a>
                 @else
@@ -89,17 +88,17 @@
                 </form>
               </td>
               <td>
-              <a href="{{ route('admin.player.getCashIn', $user->id) }}" data-bs-toggle="tooltip" data-bs-original-title="Cash IN To Player" class="btn btn-info btn-sm">
-                  <i class="fas fa-right-left text-white me-1"></i>
-                  ငွေလွဲမည်
+              <a href="{{ route('admin.player.getCashIn', $user->id) }}" data-bs-toggle="tooltip" data-bs-original-title="Deposit To Player" class="btn btn-info btn-sm">
+                  <i class="fas fa-plus text-white me-1"></i>
+                  Dep
                 </a>
-                <a href="{{ route('admin.player.getCashOut', $user->id) }}" data-bs-toggle="tooltip" data-bs-original-title="Cash Out To Player" class="btn btn-warning btn-sm">
-                  <i class="fas fa-right-left text-white me-1"></i>
-                  ငွေထုတ်မည်
+                 <a href="{{route('admin.report.providerList',['player_name' =>$user->name])}}" data-bs-toggle="tooltip" data-bs-original-title="Report" class="btn btn-info btn-sm">
+                  <i class="fas fa-line-chart text-white me-1"></i>
+                  Report
                 </a>
-                <a href="{{ route('admin.player.getTransferDetail', $user->id) }}" data-bs-toggle="tooltip" data-bs-original-title="Transfer Detail" class="btn btn-warning btn-sm">
+                <a href="{{ route('admin.player.getTransferDetail', $user->id) }}" data-bs-toggle="tooltip" data-bs-original-title="Transfer Log" class="btn btn-info btn-sm">
                   <i class="fas fa-right-left text-white me-1"></i>
-                  လွှဲပြောင်းမှတ်တမ်း
+                  Log
                 </a>
 
           </td>
@@ -164,26 +163,5 @@
   var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
   })
-  var errorMessage =  @json(session('error'));
-    var successMessage =  @json(session('success'));
-  
-console.log(successMessage);
 </script>
-<script>
-@if(session()->has('success'))
-  Swal.fire({
-    icon: 'success',
-    title: successMessage,
-    showConfirmButton: false,
-    timer: 1500
-  })
-  @elseif(session()->has('error'))
-  Swal.fire({
-    icon: 'error',
-    title: errorMessage,
-    showConfirmButton: false,
-    timer: 1500
-  })
-  @endif
-</script> 
 @endsection

@@ -9,24 +9,8 @@ class Provider extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['p_code','description'];
-    // protected $appends = ['img_url'];
-
-
-    // public function gameTypes()
-    // {
-    //     return $this->belongsToMany(GameType::class)->withPivot('image');
-    // }
-
-    // // public function getGameIconUrlAttribute()
-    // // {
-    // //     return asset('/slot_app/images/gametypeicon/' . $this->pivot->image);
-    // // }
-    // public function getImgUrlAttribute()
-    // {
-    //     return asset('assets/slot_app/images/gametypeicon/' . $this->pivot->image);
-    // }
-
+    protected $fillable = ['p_code','description','order'];
+   
     protected $appends = ['img_url'];
 
     public function gameTypes()

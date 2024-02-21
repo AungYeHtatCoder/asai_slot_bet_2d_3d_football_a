@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('p_code')->index();
             $table->string('description')->nullable();
+            $table->integer('order');
             $table->timestamps();
         });
     }

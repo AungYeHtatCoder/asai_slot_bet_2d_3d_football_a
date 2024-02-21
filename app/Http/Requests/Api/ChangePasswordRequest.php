@@ -27,15 +27,4 @@ class ChangePasswordRequest extends FormRequest
             'password' => ['required', 'string', 'min:8'],
         ];
     }
-    // public function withValidator($validator)
-    // {
-    // $validator->after(function ($validator) {
-    //     if ( !Hash::check($this->current_password, $this->user()->password) ) {
-    //         $validator->errors()->add('current_password', 'Your current password is incorrect.');
-    //     }
-    // });
-    // return;
-//  }
-
-
 }

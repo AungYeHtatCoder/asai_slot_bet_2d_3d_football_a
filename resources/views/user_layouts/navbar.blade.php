@@ -6,7 +6,7 @@
                 <div class="col-4">
                     <a href="{{ url('/') }}" class="text-decoration-none">
                         <div class="d-flex">
-                            <img src="{{ asset('assets/img/logo.png') }}" class="d-block img-fluid" width="50px" alt="">
+                            <img src="{{ asset('assets/logo/logo_icon.png') }}" class="d-block img-fluid" width="50px" alt="">
                         </div>
                     </a>
                 </div>

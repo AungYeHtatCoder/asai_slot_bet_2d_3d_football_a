@@ -196,6 +196,7 @@ class AgentController extends Controller
                 $inputs['cash_balance'] = $agent->balance;
                 $inputs['cash_in'] = $cashIn;
                 $inputs['to_user_id'] = $id;
+                $inputs['type'] = 0 ; //deposit
                 // Create transfer log
                 TransferLog::create(array_merge($inputs));
          
@@ -235,6 +236,7 @@ class AgentController extends Controller
             $inputs['cash_balance'] = $agent->balance;
             $inputs['cash_out'] = $cashOut;
             $inputs['to_user_id'] = $admin->id;
+            $inputs['type'] = 1 ; //withdraw
 
          TransferLog::create($inputs);
          
@@ -266,5 +268,17 @@ class AgentController extends Controller
 
     }
 
+    public function banAgent($id)
+    {
+        $user = User::find($id);
+        $user->update(['status' => $user->status == 1 ? 2 : 1]);
+        if (Auth::check() && Auth::id() == $id) {
+            Auth::logout();
+        }
+        return redirect()->back()->with(
+            'success',
+            'User ' . ($user->status == 1 ? 'activated' : 'banned') . ' successfully'
+        );
+    }
 
 }

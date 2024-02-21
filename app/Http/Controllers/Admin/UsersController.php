@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use Exception;
-use App\Models\Admin\Role;
 use App\Models\User;
 use App\Helpers\ApiHelper;
-use App\Models\Permission;
+use App\Models\Admin\Role;
 use App\Services\ApiService;
 use Illuminate\Http\Request;
+use App\Models\Admin\Permission;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -58,7 +58,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        dd("here");
+        //dd("here");
         abort_if(
             Gate::denies('user_create'),
             Response::HTTP_FORBIDDEN,

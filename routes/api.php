@@ -8,7 +8,8 @@ use App\Http\Controllers\Api\V1\Bank\BankController;
 use App\Http\Controllers\Api\V1\PromotionController;
 use App\Http\Controllers\Api\V1\Player\WalletController;
 use App\Http\Controllers\Api\V1\Player\DepositController;
-use App\Http\Controllers\Api\V1\Player\WithdrawController;
+use App\Http\Controllers\Api\V1\Player\PlayerTransactionLogController;
+use App\Http\Controllers\Api\V1\Player\WithDrawController;
 use App\Http\Controllers\Api\V1\User\GameController as UserGameController;
 use App\Http\Controllers\Api\V1\User\PlayerTransfer\PlayerTransferToGameWalletController;
 
@@ -28,9 +29,12 @@ Route::group(["middleware" => ['auth:sanctum']], function () {
     Route::get('user', [AuthController::class, 'getUser']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('changePassword', [AuthController::class, 'changePassword']);
+    Route::post('profile', [AuthController::class, 'profile']);
+
     //game lists
     Route::get('/gamedetail/{provider_id}/game_type/{game_type_id}', [GameController::class, 'getGameDetail']);
     Route::get('gamelist', [GameController::class, 'gameList']);
+    Route::get('game-log',[GameController::class,'gameLog']);
 
     Route::get('/launchGame/{id}', [GameController::class, 'launchGame'])->name('user.launchGame');
     Route::get(
@@ -45,7 +49,8 @@ Route::group(["middleware" => ['auth:sanctum']], function () {
 
     Route::group(['prefix' => 'transaction'], function () {
         Route::post('deposit', [DepositController::class, 'deposit']);
-        Route::post('withdraw',[WithdrawController::class,'withdraw']);
+        Route::post('withdraw',[WithDrawController::class,'withdraw']);
+        Route::get('player-transactionlog',[PlayerTransactionLogController::class,'index']);
         //amk transaction route
         Route::post('/play-slot-game', [PlayerTransferToGameWalletController::class, 'playSlotGame'])
             ->name('play-slot-game');

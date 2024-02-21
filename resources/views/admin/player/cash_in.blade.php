@@ -12,7 +12,6 @@
     /* For some browsers */
   }
 
-
   .custom-form-group {
     margin-bottom: 20px;
   }
@@ -61,16 +60,14 @@
 @section('content')
 <div class="row justify-content-center">
   <div class="col-lg-12">
-    <div class="container mt-2">
+    <div class=" mt-2">
       <div class="d-flex justify-content-between">
-      {{-- kzt --}}
         <a class="btn btn-icon btn-2 btn-primary" href="{{ route('admin.player.index')}}">
           <span class="btn-inner--icon mt-1"><i class="material-icons">arrow_back</i>Back</span>
         </a>
       </div>
       <div class="card">
-      <h4 class="ms-3">Player Information 
-</h4>
+      <h4 class="ms-3">Player Information </h4>
         <div class="table-responsive">
           <table class="table align-items-center mb-0">
             <tbody>

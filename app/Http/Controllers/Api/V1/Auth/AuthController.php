@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api\V1\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\ChangePasswordRequest;
 use App\Http\Requests\Api\LoginRequest;
+use App\Http\Requests\Api\ProfileRequest;
+use App\Http\Resources\PlayerResource;
 use App\Models\Admin\Provider;
 use App\Models\User;
 use App\Traits\HttpResponses;
@@ -58,9 +60,29 @@ class AuthController extends Controller
         return $this->success($player,'Password has been changed successfully.');
     }
 
+    public function profile(ProfileRequest $request)
+    {
+        
+        $image = $request->file('profile');
+        $filename = null;
+        if($image){
+            $ext = $image->getClientOriginalExtension();
+            $filename = uniqid('player_profile') . '.' . $ext; // Generate a unique filename
+            $image->move(public_path('assets/img/player_profile/'), $filename); // Save the file
+
+        }
+        $player = Auth::user();
+        $player->update([
+            'profile' => $filename,
+            'phone' => $request->phone
+        ]);
+     
+        return new PlayerResource($player);
+      
+    }
+
     public function callback(Request $request)
     {
-
         $player = User::where('name',$request->username)->first();
         $provider = Provider::where('p_code',$request->provider)->first();
         

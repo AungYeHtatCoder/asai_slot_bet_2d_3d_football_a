@@ -22,6 +22,7 @@ class TransferLog extends Model
         'note',
         'sync',
         'sync_time',
+        'type'
     ];
     protected $dates = ['created_at', 'updated_at'];
     

@@ -83,20 +83,38 @@
     <div class="card-body">
      <form role="form" class="text-start" method ='post' action="{{route('admin.player.update',$player->id)}}">
       @csrf
-      @method('PUT')
+      @method('PUT')     
       <div class="custom-form-group">
-       <label for="title">User Name</label>
-       <input type="text" id="name" name="name" class="form-control" value="{{$player->name}}" readonly>
-      </div>
-      <div class="custom-form-group">
-       <label for="title">Phone No</label>
-       <input type="text" id="" name="phone" class="form-control" value="{{$player->phone}}">
-      </div>
-      <div class="custom-form-group">
-       <label for="title">Password</label>
-       <input type="password" id="password" password="password" class="form-control">
-      </div>
-
+              <label for="title">PlayerName <span class="text-danger">*</span></label>
+              <input type="text"  name="name" class="form-control" value="{{$player->name}}" readonly>
+              @error('name')
+              <span class="text-danger d-block">*{{ $message }}</span>
+              @enderror
+            </div>
+            <div class="custom-form-group">
+              <label for="title">Name <span class="text-danger">*</span></label>
+              <input type="text"  name="player_name" class="form-control" value="{{$player->player_name}}">
+              @error('player_name')
+              <span class="text-danger d-block">*{{ $message }}</span>
+              @enderror
+            </div>
+            <div class="custom-form-group">
+              <label for="title">Phone No <span class="text-danger">*</span></label>
+              <input type="text"  name="phone" class="form-control" value="{{$player->phone}}">
+              @error('phone')
+              <span class="text-danger d-block">*{{ $message }}</span>
+              @enderror
+            </div>
+            <div class="custom-form-group">
+              <label for="title">Status <span class="text-danger">*</span></label>
+              <select name="status" id="" class="form-control">
+                <option value="1" {{ $player->status == 1 ? 'selected' : '' }}>Active</option>
+                <option value="2" {{ $player->status == 2 ? 'selected' : '' }}>Inactive</option>
+                </select>
+                @error('status')
+              <span class="text-danger d-block">*{{ $message }}</span>
+              @enderror
+              </div>
     
 
       <div class="custom-form-group">
